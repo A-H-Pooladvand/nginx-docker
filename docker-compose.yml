@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  nginx:
+    restart: always
+    container_name: ${PROJECT_NAME}
+    ports:
+      - ${WEBSERVER_PORT}:80
+    image: nginx:alpine
+    working_dir: /etc/nginx
+    volumes:
+      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/config/conf.d:/etc/nginx/conf.d
