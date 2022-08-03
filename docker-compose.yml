@@ -8,6 +8,8 @@ networks:
 services:
   nginx:
     restart: always
+    networks:
+      - microservice
     container_name: ${PROJECT_NAME}
     ports:
       - ${WEBSERVER_PORT}:80
